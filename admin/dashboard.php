@@ -1,7 +1,167 @@
 <?php
-    include '../auth.php';
+    include '../includes/auth.php';
     verificarSesion('admin');
 ?>
 
-<h2>Bienvenido Administrador</h2>
-<a href="../logout.php">Cerrar sesión</a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administrador - Gestión de Alumnos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script defer src="../JS/funciones.js"></script>
+
+    <style>
+        .hidden { display: none; }
+        .ocultar {
+            display: none !important;
+        }
+    </style>
+
+</head>
+
+<body class="bg-light">
+    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+            <div class="container-fluid">
+                <span class="navbar-brand fw-bold text-primary">Panel del Administrador</span>
+
+                <div class="d-flex">
+                    <a href="../logout.php" class="btn btn-outline-danger">Cerrar sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container py-5">
+    <h2 class="text-center mb-4">Panel del Administrador</h2>
+
+    <div id="tabla-alumnos"></div>
+
+
+    <!-- Formulario de Registro de Alumno -->
+    <div class="card">
+        <div class="card-header bg-success text-white">
+        Registrar Nuevo Alumno
+        </div>
+        <div class="card-body">
+        <form id="registro">
+            <h5 class="mb-3">Datos Personales</h5>
+            <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="boleta" class="form-label">Número de Boleta</label>
+                <input type="text" id="boleta" name="boleta" class="form-control" required />
+            </div>
+            <div class="col-md-4">
+                <label for="nombre" class="form-label">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" required />
+            </div>
+            <div class="col-md-4">
+                <label for="fecha" class="form-label">Fecha de Nacimiento</label>
+                <input type="date" id="fecha" name="fecha" class="form-control" required />
+            </div>
+            </div>
+
+            <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="genero" class="form-label">Género</label>
+                <select id="genero" name="genero" class="form-select" required>
+                <option value="">Selecciona</option>
+                <option>Mujer</option>
+                <option>Hombre</option>
+                <option>Otro</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="curp" class="form-label">CURP</label>
+                <input type="text" id="curp" name="curp" maxlength="18" class="form-control" required />
+            </div>
+            <div class="col-md-4">
+                <label for="entidad" class="form-label">Entidad Federativa</label>
+                <select id="entidad" name="entidad" class="form-select" required>
+                <option value="">Selecciona</option>
+                <option>CDMX</option>
+                <option>Estado de México</option>
+                <option>Jalisco</option>
+                <!-- ... agrega las demás entidades aquí -->
+                </select>
+            </div>
+            </div>
+
+            <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="number" id="telefono" name="telefono" class="form-control" required />
+            </div>
+
+            <h5 class="mt-4">Datos de Procedencia</h5>
+            <div class="mb-3">
+            <label for="EscuelaProcedencia" class="form-label">Escuela de Procedencia</label>
+            <select id="EscuelaProcedencia" name="EscuelaProcedencia" class="form-select" onchange="toggleNombreEscuela()" required>
+                <option value="">Selecciona</option>
+                <option value="Politecnico">Politécnico</option>
+                <option value="UNAM">UNAM</option>
+                <option value="Otro">Otro</option>
+            </select>
+            </div>
+
+            <div class="mb-3 hidden" id="NombreEscuelaid">
+            <label for="Politecnico" class="form-label">Nombre de la Escuela del Politécnico</label>
+            <select id="Politecnico" name="Politecnico" class="form-select">
+                <option>CECyT 1</option>
+                <option>CECyT 2</option>
+                <option>CECyT 9</option>
+                <!-- Agrega los demás -->
+            </select>
+            </div>
+
+            <div class="mb-3 hidden" id="NombreEscuelaUNAM">
+            <label for="UNAM" class="form-label">Nombre de la Escuela de la UNAM</label>
+            <select id="UNAM" name="UNAM" class="form-select">
+                <option>CCH VALLEJO</option>
+                <option>CCH SUR</option>
+            </select>
+            </div>
+
+            <div class="mb-3 hidden" id="NombreEscuelaDiv">
+            <label for="NombreEscuela" class="form-label">Nombre de la Escuela</label>
+            <input type="text" id="NombreEscuela" name="NombreEscuela" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+            <label for="promedio" class="form-label">Promedio</label>
+            <input type="number" step="0.1" min="6" max="10" id="promedio" name="promedio" class="form-control" required />
+            </div>
+
+            <h5 class="mt-4">Datos de Cuenta</h5>
+            <div class="mb-3">
+            <label for="correo" class="form-label">Correo Institucional</label>
+            <input type="email" id="correo" name="correo" class="form-control" required />
+            </div>
+            <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" id="password" name="password" class="form-control" required />
+            </div>
+
+            <div class="d-flex justify-content-end gap-2">
+
+            <button type="submit" id="botonRegistrarDos" name="accion" class="btn btn-primary" value="registrar">Registrar</button>
+            <button type="submit" name="accion" id="botonEditarDos" class="btn btn-warning ocultar" value="actualizar">Editar</button>
+
+            <button type="reset" class="btn btn-secondary">Limpiar</button>
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+
+</body>
+</html>
+
+

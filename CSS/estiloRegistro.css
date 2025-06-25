@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.left-panel {
+    background: white;
+    height: 100%;
+    overflow: hidden;
+}
+.right-panel {
+    padding: 2rem;
+    background: white;
+    height: 100%;
+    overflow-y: auto;
+}
+.form-container {
+    max-width: 900px;
+    height: 79.5vh;
+}
+        
+
+/*ESTILOS DEL FOOTER*/
+
+.escudoFooter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+.escudoFooter a{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.nombreEscuela{
+    text-align: center;
+}
+
+.datosContacto{
+    padding: 20px;
+}
+
+
+.imgDer{
+    padding: 10px;
+}
+
+.imgDer img{
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .left-panel {
+        display: none !important; /* Forzar ocultamiento */
+    }
+    .right-panel {
+        width: 100% !important;
+        padding: 1rem !important; /* Reducir padding en móviles */
+    }
+    .form-container {
+        max-width: 100% !important;
+        height: auto !important; /* Altura automática para móviles */
+        margin: 0 !important;
+    }
+    .col-md-6 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    .row {
+        margin: 0 !important; /* Eliminar márgenes de la fila */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .imgEscudo{
+        display: none;
+    }
+}

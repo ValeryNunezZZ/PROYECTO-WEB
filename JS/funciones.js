@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $.ajax({
-        url: "read.php",
+        url: "../includes/read.php",
         method: "GET",
         success: function (data) {
             $("#tabla-alumnos").html(data);
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const form = e.target;
             const formData = new FormData(form);
     
-            fetch("./insert.php", {
+            fetch("../includes/insert.php", {
                 method: "POST",
                 body: formData
             })
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const form = e.target;
             const formData = new FormData(form);
     
-            fetch("update.php", {
+            fetch("../includes/update.php", {
                 method: "POST",
                 body: formData
             })
@@ -136,7 +136,7 @@ function eliminarAlumno(boleta) {
     }
 
     // Llamada AJAX con fetch
-    fetch('delete.php', {
+    fetch('../includes/delete.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: 'boleta=' + encodeURIComponent(boleta)
@@ -155,7 +155,7 @@ function eliminarAlumno(boleta) {
 
 // Función para cargar tabla (puedes llamarla al inicio y después de eliminar)
 function cargarTablaAlumnos() {
-    fetch("read.php")
+    fetch("../includes/read.php")
         .then(response => response.text())
         .then(html => {
             document.getElementById("tabla-alumnos").innerHTML = html;
