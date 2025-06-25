@@ -54,7 +54,6 @@
                     <div class='d-flex gap-2'>
                         <button class='btn btn-sm btn-warning' onclick='editarAlumno(this)'>Editar</button>
                         <button class='btn btn-sm btn-danger' onclick='eliminarAlumno(\"{$fila['boleta']}\")'>Eliminar</button>
-                        <button class='btn btn-sm btn-info text-white' onclick='verAlumno(this)'>Ver</button>
                     </div>
                 </td>";
             echo "</tr>";
