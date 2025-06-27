@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const formulario = document.getElementById("formulario");
 
   formulario.addEventListener("submit", function (e) {
-    e.preventDefault(); 
-
     const correo = document.getElementById("correo").value.trim();
     const password = document.getElementById("contrasena").value.trim();
 
@@ -11,15 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordval = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
 
     if (!correoval.test(correo)) {
-      alert("Correo o Contraseña invalidos");
+      e.preventDefault(); // ✅ Solo evita el envío si es inválido
+      alert("Correo inválido. Debe ser institucional.");
       return;
     }
 
     if (!passwordval.test(password)) {
-      alert("Correo o Contraseña invalidos");
+      e.preventDefault(); // ✅ Solo evita el envío si es inválido
+      alert("Contraseña inválida. Debe tener al menos una mayúscula, un número y un símbolo.");
       return;
     }
 
-   // alert("Formulario válido");
+    // ✅ Si pasa las validaciones, no se hace preventDefault, y el formulario se envía normalmente
   });
 });

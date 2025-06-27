@@ -28,7 +28,8 @@ error_reporting(E_ALL);
                 exit();
             }
         }
-        echo "Datos incorrectos.";
+        
+        echo "<script>alert('Datos incorrectos :(');</script>";
     }
 ?>
 
@@ -42,51 +43,49 @@ error_reporting(E_ALL);
         <title>Login Alumno</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-
         <link rel="stylesheet" href="../CSS/estiloDos.css">
     </head>
     
     <body class="position-relative">
         
-        <header class="headerLogin">
+    <header class="headerLogin">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                
-                <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             
-                    <div class="navbar-brand imgEscudoIPN">
-                        <a target="_blank" href="https://www.ipn.mx/"><img src="../IMG/logotipo_ipn.webp"></a>
-                    </div>
-                
-                    <!-- Botón del menú hamburguesa -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                
-                    <!-- Menú colapsable -->
-                    <div class="collapse navbar-collapse" id="navbarContenido">
-    
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a target="_blank" class="nav-link active" href="./index.html">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a target="_blank" class="nav-link" href="./registro.html">Registro</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./loginAdmin.html">Admin</a>
-                            </li>
-                            <li class="nav-item">
-                                <a target="_blank" class="nav-link" href="./loginAlumno.html">Cuenta</a>
-                            </li>
-                        </ul>
-    
-                    </div>
+            <div class="container-fluid">
+        
+                <div class="navbar-brand imgEscudoIPN">
+                    <a target="_blank" href="https://www.ipn.mx/"><img src="../IMG/logotipo_ipn.webp"></a>
                 </div>
-            </nav>
-    
-        </header>
+            
+                <!-- Botón del menú hamburguesa -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <!-- Menú colapsable -->
+                <div class="collapse navbar-collapse" id="navbarContenido">
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a target="_blank" class="nav-link active" href="../index.php">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../registro.html">Registro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a target="_blank" class="nav-link" href="../admin/login.php">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a target="_blank" class="nav-link" href="login.php">Cuenta</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+    </header>
         
     <!-- Contenedor centrado -->
     <div class="d-flex justify-content-center align-items-center vh-100">
@@ -155,7 +154,32 @@ error_reporting(E_ALL);
     </div>
 </footer>
 
-    <script src="../JS/validaDos.js"></script>
+<script>
+        const formulario = document.getElementById("formulario");
+
+        formulario.addEventListener("submit", function (e) {
+        const correo = document.getElementById("correo").value.trim();
+        const password = document.getElementById("contrasena").value.trim();
+
+        const correoval = /^[a-zA-Z0-9._%+-]+@alumno\.ipn\.mx$/;
+        const passwordval = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
+
+        if (!correoval.test(correo)) {
+            e.preventDefault();
+            alert("Correo inválido. Debe ser institucional.");
+            return;
+        }
+
+        if (!passwordval.test(password)) {
+            e.preventDefault();
+            alert("Contraseña inválida. Debe tener al menos una mayúscula, un número y un símbolo.");
+            return;
+        }
+
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
     </body>
 

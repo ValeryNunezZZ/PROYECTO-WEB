@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inicio</title>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
 
@@ -27,44 +29,44 @@
 <body>
 
 
-    <header>
+<header>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            
-            <div class="container-fluid">
-        
-                <div class="navbar-brand imgEscudoIPN">
-                    <a target="_blank" href="https://www.ipn.mx/"><img src="./IMG/logotipo_ipn.webp"></a>
-                </div>
-            
-                <!-- Botón del menú hamburguesa -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            
-                <!-- Menú colapsable -->
-                <div class="collapse navbar-collapse" id="navbarContenido">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a target="_blank" class="nav-link active" href="./index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a target="_blank" class="nav-link" href="./registro.html">Registro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a target="_blank" class="nav-link" href="./admin/login.php">Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a target="_blank" class="nav-link" href="./alumno/login.php">Cuenta</a>
-                        </li>
-                    </ul>
+    <div class="container-fluid">
+
+        <div class="navbar-brand imgEscudoIPN">
+            <a target="_blank" href="https://www.ipn.mx/"><img src="./IMG/logotipo_ipn.webp"></a>
+        </div>
     
-                </div>
-            </div>
-        </nav>
+        <!-- Botón del menú hamburguesa -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     
-    </header>
+        <!-- Menú colapsable -->
+        <div class="collapse navbar-collapse" id="navbarContenido">
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a target="_blank" class="nav-link active" href="index.php">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a target="_blank" class="nav-link" href="registro.html">Registro</a>
+                </li>
+                <li class="nav-item">
+                    <a target="_blank" class="nav-link" href="./admin/login.php">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a target="_blank" class="nav-link" href="./alumno/login.php">Cuenta</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+</header>
     
     <main>
     <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-custom carouselContainer">
@@ -455,9 +457,6 @@
         </div>
         </div>
     </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 </html>
 
