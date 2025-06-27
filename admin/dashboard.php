@@ -87,10 +87,38 @@
                 <label for="entidad" class="form-label">Entidad Federativa</label>
                 <select id="entidad" name="entidad" class="form-select" required>
                 <option value="">Selecciona</option>
-                <option>CDMX</option>
-                <option>Estado de México</option>
-                <option>Jalisco</option>
-                <!-- ... agrega las demás entidades aquí -->
+                <option value="Aguascalientes">Aguascalientes</option>
+                    <option value="Baja California">Baja California</option>
+                    <option value="Baja California Sur">Baja California Sur</option>
+                    <option value="Campeche">Campeche</option>
+                    <option value="Chiapas">Chiapas</option>
+                    <option value="Chihuahua">Chihuahua</option>
+                    <option value="CDMX">CDMX</option>
+                    <option value="Coahuila">Coahuila</option>
+                    <option value="Colima">Colima</option>
+                    <option value="Durango">Durango</option>
+                    <option value="Estado de México">Estado de México</option>
+                    <option value="Guanajuato">Guanajuato</option>
+                    <option value="Guerrero">Guerrero</option>
+                    <option value="Hidalgo">Hidalgo</option>
+                    <option value="Jalisco">Jalisco</option>
+                    <option value="Michoacan">Michoacan</option>
+                    <option value="Morelos">Morelos</option>
+                    <option value="Nayarit">Nayarit</option>
+                    <option value="Nuevo Leon">Nuevo Leon</option>
+                    <option value="Oaxaca">Oaxaca</option>
+                    <option value="Puebla">Puebla</option>
+                    <option value="Queretaro">Queretaro</option>
+                    <option value="Quintana Roo">Quintana Roo</option>
+                    <option value="San Luis Potosi">San Luis Potosí</option>
+                    <option value="Sinaloa">Sinaloa</option>
+                    <option value="Sonora">Sonora</option>
+                    <option value="Tabasco">Tabasco</option>
+                    <option value="Tamaulipas">Tamaulipas</option>
+                    <option value="Tlaxcala">Tlaxcala</option>
+                    <option value="Veracruz">Veracruz</option>
+                    <option value="Yucatan">Yucatan</option>
+                    <option value="Zacatecas">Zacatecas</option>
                 </select>
             </div>
             </div>
@@ -114,18 +142,37 @@
             <div class="mb-3 hidden" id="NombreEscuelaid">
             <label for="Politecnico" class="form-label">Nombre de la Escuela del Politécnico</label>
             <select id="Politecnico" name="Politecnico" class="form-select">
-                <option>CECyT 1</option>
-                <option>CECyT 2</option>
-                <option>CECyT 9</option>
-                <!-- Agrega los demás -->
+                <option value="CECyT 1">CECyT 1</option>
+                <option value="CECyT 2">CECyT 2</option>
+                <option value="CECyT 3">CECyT 3</option>
+                <option value="CECyT 4">CECyT 4</option>
+                <option value="CECyT 5">CECyT 5</option>
+                <option value="CECyT 6">CECyT 6</option>
+                <option value="CECyT 7">CECyT 7</option>
+                <option value="CECyT 8">CECyT 8</option>
+                <option value="CECyT 9">CECyT 9</option>
+                <option value="CECyT 10">CECyT 10</option>
+                <option value="CECyT 11">CECyT 11</option>
+                <option value="CECyT 12">CECyT 12</option>
+                <option value="CECyT 13">CECyT 13</option>
+                <option value="CECyT 14">CECyT 14</option>
+                <option value="CECyT 15">CECyT 15</option>
+                <option value="CECyT 16">CECyT 15</option>
+                <option value="CECyT 17">CECyT 15</option>
+                <option value="CECyT 18">CECyT 15</option>
+                <option value="CECyT 19">CECyT 19</option>
+                <option value="CET 1">CET 1</option>
             </select>
             </div>
 
             <div class="mb-3 hidden" id="NombreEscuelaUNAM">
             <label for="UNAM" class="form-label">Nombre de la Escuela de la UNAM</label>
             <select id="UNAM" name="UNAM" class="form-select">
-                <option>CCH VALLEJO</option>
-                <option>CCH SUR</option>
+                    <option value="CCH VALLEJO">CCH VALLEJO</option>
+                    <option value="CCH SUR">CCH SUR</option>
+                    <option value="CCH AZCAPOTZALCO">CCH AZCAPOTZALCO</option>
+                    <option value="CCH ORIENTE">CCH ORIENTE</option>
+                    <option value="prepa 9">Prepa 9</option>
             </select>
             </div>
 
@@ -146,7 +193,9 @@
             </div>
             <div class="mb-3">
             <label for="password" class="form-label">Contraseña</label>
-            <input type="password" id="password" name="password" class="form-control" required />
+            <input type="password" id="password" name="password" class="form-control" required>
+<input type="checkbox" onclick="document.getElementById('password').type = this.checked ? 'text' : 'password'"> Mostrar contraseña
+
             </div>
 
             <div class="d-flex justify-content-end gap-2">

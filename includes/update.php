@@ -15,7 +15,7 @@
     $NombreEscuela = $_POST["NombreEscuela"] ?? null;
     $promedio = $_POST["promedio"];
     $correo = $_POST["correo"];
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Rehashea
+    $password = $_POST["password"]; // Rehashea
 
     $sql = "UPDATE alumnos SET 
         nombre=?, fecha=?, genero=?, curp=?, entidad=?, telefono=?, 

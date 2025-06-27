@@ -7,10 +7,11 @@
 
     // Inicio del contenedor de la tabla
     echo '<div class="card mb-5">
-        <div class="card-header bg-primary text-white">
-            Alumnos Registrados
-        </div>
-        <div class="card-body p-0">
+    <div class="card-header bg-primary text-white">
+        Alumnos Registrados
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
             <table class="table table-striped table-hover mb-0">
                 <thead class="table-dark">
                     <tr>
@@ -22,6 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>';
+
 
     // Verifica si hay registros
     if ($resultado->num_rows > 0) {

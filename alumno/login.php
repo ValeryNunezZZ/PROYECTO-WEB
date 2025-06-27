@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 
         if ($resultado->num_rows === 1) {
             $usuario = $resultado->fetch_assoc();
-            if (password_verify($password, $usuario['password'])) {
+            if ($password == $usuario['password']) {
                 $_SESSION['usuario_id'] = $usuario['boleta'];
                 $_SESSION['usuario_tipo'] = $usuario['tipo'];
                 /* 

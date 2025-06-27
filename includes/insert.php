@@ -15,7 +15,7 @@
     $NombreEscuela = $_POST["NombreEscuela"] ?? null;
     $promedio = $_POST["promedio"];
     $correo = $_POST["correo"];
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Seguridad
+    $password = $_POST["password"]; // Seguridad
 
     $sql = "INSERT INTO alumnos (
         boleta, nombre, fecha, genero, curp, entidad, telefono, 
