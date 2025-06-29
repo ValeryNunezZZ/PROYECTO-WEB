@@ -11,6 +11,7 @@ error_reporting(E_ALL);
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $correo = $_POST['correo'];
         $password = $_POST['password'];
+        $_SESSION["correo"] = $correo;
 
         $sql = "SELECT * FROM alumnos WHERE correo = '$correo' AND tipo = 'alumno'";
         

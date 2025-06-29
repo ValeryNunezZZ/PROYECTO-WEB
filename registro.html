@@ -65,7 +65,7 @@
             <!-- Derecha -->
             <div class="col-md-6 right-panel">
                 <h2 class="text-center mb-4">Formulario de Registro: Nuevo Ingreso ESCOM</h2>
-                <form id="registro" class="bg-white p-4 rounded shadow">
+                <form action="includes/insertAlumno.php" method="POST" name="php" id="registro" class="bg-white p-4 rounded shadow">
                 
                 <h4>Datos Personales</h4>
                 <div class="mb-3">
@@ -93,8 +93,8 @@
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="genero" id="generoOtro" value="Otro">
                     <label class="form-check-label" for="generoOtro">Otro</label>
-    </div>
-</div>
+                </div>
+            </div>
                 <div class="mb-3">
                     <label for="curp" class="form-label">CURP</label>
                     <input type="text" id="curp" name="curp" maxlength="18" class="form-control" required />
