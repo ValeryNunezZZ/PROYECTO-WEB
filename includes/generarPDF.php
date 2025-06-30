@@ -73,7 +73,7 @@
     printRow($pdf, 'CURP:', $alumno['curp'], $fill = !$fill);
     printRow($pdf, 'Entidad Federativa:', $alumno['entidad'], $fill = !$fill);
     printRow($pdf, 'Teléfono:', $alumno['telefono'], $fill = !$fill);
-    printRow($pdf, 'Escuela de Procedencia:', $alumno['EscuelaProcedencia'], $fill = !$fill);
+    printRow($pdf, 'Escuela de Procedencia:', $alumno['escuela'], $fill = !$fill);
     printRow($pdf, 'Promedio:', $alumno['promedio'], $fill = !$fill);
     printRow($pdf, 'Correo:', $alumno['correo'], $fill = !$fill);
 

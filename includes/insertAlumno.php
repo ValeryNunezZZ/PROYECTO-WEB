@@ -10,22 +10,31 @@
     $entidad = $_POST["entidad"];
     $telefono = $_POST["telefono"];
     $escuelaProcedencia = $_POST["EscuelaProcedencia"];
-
     $procedencia = $_POST['EscuelaProcedencia']; // Politecnico, UNAM o Otro
+    
+    session_start();
 
+    $_SESSION["Politecnico"] = "";
+    $_SESSION["UNAM"] = "";
+    $_SESSION["NombreEscuela"] = "";
+    
     if ($procedencia == "Politecnico" && isset($_POST['Politecnico'])) {
         $escuela = $_POST['Politecnico'];
+        $_SESSION["Politecnico"] = $escuela;
     } elseif ($procedencia == "UNAM" && isset($_POST['UNAM'])) {
         $escuela = $_POST['UNAM'];
+        $_SESSION["UNAM"] = $escuela;
     } elseif ($procedencia == "Otro" && isset($_POST['NombreEscuela'])) {
         $escuela = $_POST['NombreEscuela'];
+        $_SESSION["NombreEscuela"] = $escuela;
     }
 
     $promedio = $_POST["promedio"];
     $correo = $_POST["correo"];
     $contrasena = $_POST["password"];
 
-    session_start();
+    
+    
     $_SESSION["boleta"] = $boleta;
     $_SESSION["nombre"] = $nombre;
     $_SESSION["fecha"] = $fechaNac;
@@ -37,7 +46,7 @@
     $_SESSION["promedio"] = $promedio;
     $_SESSION["correo"] = $correo;
     $_SESSION["password"] = $contrasena;
-
+    $_SESSION["EscuelaProcedencia"] = $escuelaProcedencia;
 ?>
 
 <!DOCTYPE html>

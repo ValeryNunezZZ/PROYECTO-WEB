@@ -14,13 +14,19 @@
     $correo = $_SESSION["correo"];
     $contrasena = $_SESSION["password"];
 
+    $politecnico = $_SESSION["Politecnico"];
+    $UNAM = $_SESSION["UNAM"];
+    $NombreEscuela = $_SESSION["NombreEscuela"];
+    $escuelaProcedencia = $_SESSION["EscuelaProcedencia"];
     /// se hace el insert del usuario
     $nuevoRegistro = 
     "INSERT INTO `alumnos`
     (`boleta`, `nombre`, `fecha`, `genero`, `curp`, `entidad`,
-    `telefono`, `EscuelaProcedencia`, `promedio`, `correo`, `password`)
+    `telefono`, `escuela`, `promedio`, `correo`, `password`,
+    `politecnico`, `UNAM`, `NombreEscuela`, `escuelaProcedencia`)
     VALUES ('$boleta', '$nombre', '$fechaNac', '$genero', '$curp', '$entidad',
-    '$telefono', '$escuela', '$promedio', '$correo', '$contrasena');
+    '$telefono', '$escuela', '$promedio', '$correo', '$contrasena',
+    '$politecnico', '$UNAM', '$NombreEscuela', '$escuelaProcedencia');
     ";
 
 
